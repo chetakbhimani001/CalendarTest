@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/event_coordinator"
+    android:background="@color/bg_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/event_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/event_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/event_title_input"
+                android:layout_width="0dp"
+                android:layout_margin="16dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                app:hintTextColor="@color/white"
+                android:textColorHint="@color/white"
+                app:boxBackgroundColor="@color/black"
+                style="@style/TextInputLayoutStyle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/event_title"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:layout_width="match_parent"
+                    android:textSize="14sp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/meeting_name" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/event_start_date_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:textColorHint="@color/white"
+                app:boxBackgroundColor="@color/black"
+                android:clickable="true"
+                style="@style/TextInputLayoutStyle"
+                android:focusableInTouchMode="false"
+                android:focusable="false"
+                android:inputType="none"
+                app:layout_constraintStart_toStartOf="@+id/event_title_input"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintEnd_toStartOf="@+id/event_end_date_input"
+                app:layout_constraintTop_toBottomOf="@+id/event_title_input">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/event_start_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/start_time"
+                    android:clickable="true"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/event_end_date_input"
+                android:layout_width="0dp"
+                android:clickable="true"
+                android:inputType="none"
+                style="@style/TextInputLayoutStyle"
+                android:focusableInTouchMode="false"
+                android:focusable="false"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColorHint="@color/white"
+                app:boxBackgroundColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/event_start_date_input"
+                app:layout_constraintEnd_toEndOf="@+id/event_title_input"
+                app:layout_constraintTop_toTopOf="@+id/event_start_date_input">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/event_end_date"
+                    android:clickable="true"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/end_date"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveEvent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/text_bg"
+                android:padding="10dp"
+                android:text="@string/save_event"
+                android:textAllCaps="false"
+                app:cornerRadius="18dp"
+                app:layout_constraintEnd_toEndOf="@+id/event_title_input"
+                app:layout_constraintStart_toStartOf="@+id/event_title_input"
+                app:layout_constraintTop_toBottomOf="@+id/event_start_date_input" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

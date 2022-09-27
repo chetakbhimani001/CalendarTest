@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Calendar</string>
+    <string name="permission_error">Calendar permission needed for accessing events</string>
+    <string name="permission_title">Permission needed</string>
+    <string name="title">Title</string>
+    <string name="location">Location</string>
+    <string name="description">Description</string>
+    <string name="all_day">All day</string>
+    <string name="save_event">Create</string>
+    <string name="title_error">Please enter event title</string>
+    <string name="location_error">Please enter event location</string>
+    <string name="description_error">Please enter event description</string>
+    <string name="start_time_error">Please enter event start time</string>
+    <string name="end_time_error">Please enter event end time</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_date">End Time</string>
+    <string name="no_events_found">No Events Found</string>
+    <string name="todo">TODO</string>
+    <string name="invalid_date_selection">Invalid date, please try again</string>
+    <string name="event_overlaps">Event overlaps with other events.</string>
+    <string name="meeting_name">Meeting Name</string>
+</resources>
