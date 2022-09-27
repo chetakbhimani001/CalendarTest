@@ -1,6 +1,8 @@
 package com.calendar.test.utils
 
 import android.provider.CalendarContract
+import com.calendar.test.roundToFloat
+import com.calendar.test.roundToInt
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -64,36 +66,38 @@ object Constants {
         val sb = StringBuilder()
         try {
             val differenceInTime = end_date!!- start_date!!
-            val differenceInSeconds = ((differenceInTime
-                    / 1000)
-                    % 60)
-            val differenceInMinutes = ((differenceInTime
-                    / (1000 * 60))
-                    % 60)
-            val differenceInHours = ((differenceInTime
-                    / (1000 * 60 * 60))
-                    % 24)
-            val differenceInYears = (differenceInTime
-                    / (1000L * 60 * 60 * 24 * 365))
-            val difference_In_Days = ((differenceInTime
-                    / (1000 * 60 * 60 * 24))
-                    % 365)
+            val differenceInSeconds = ((differenceInTime.toFloat()
+                    / 1000))
+            val differenceInMinutes = ((differenceInTime.toFloat()
+                    / (1000 * 60)))
+            val differenceInHours = ((differenceInTime.toFloat()
+                    / (1000 * 60 * 60)))
+            val difference_In_Days = ((differenceInTime.toFloat()
+                    / (1000 * 60 * 60 * 24)))
 
-            if(difference_In_Days!=0L)
+            if(difference_In_Days>1f)
             {
-                sb.append(differenceInYears).append("D")
+                val time = difference_In_Days.roundToFloat()
+                if(time==1f) sb.append(time.toInt()).append(" day")
+                else sb.append(time).append(" days")
             }
-            if(differenceInHours!=0L)
+            else if(differenceInHours>1f)
             {
-                sb.append(differenceInHours).append("hour")
+                val time = differenceInHours.roundToFloat()
+                if(time==1f) sb.append(time.toInt()).append(" hour")
+                else sb.append(time).append(" hours")
             }
-            if(differenceInMinutes!=0L)
+            else if(differenceInMinutes>1f)
             {
-                sb.append(differenceInMinutes).append("mins")
+                val time = differenceInMinutes.roundToFloat()
+                if(time==1f) sb.append(time.toInt()).append(" min")
+                else sb.append(time).append(" mins")
             }
-            if(differenceInSeconds!=0L)
+            else if(differenceInSeconds>1f)
             {
-                sb.append(differenceInSeconds).append("seconds")
+                val time = differenceInHours.roundToFloat()
+                if(time==1f) sb.append(time.toInt()).append(" sec")
+               else  sb.append(time).append(" seconds")
             }
 
         } // Catch the Exception

@@ -59,7 +59,7 @@ class EventItemAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         sb.append("-")
         if (datum.dtEnd != null)
         sb.append(Constants.getFormattedDate(datum.dtEnd, Constants.TIME_FORMAT))
-        sb.append("(")
+        sb.append(" (")
         sb.append(Constants.findDuration(
             datum.dtStart, datum.dtEnd
         ))
